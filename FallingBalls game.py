@@ -33,7 +33,7 @@ def update_score(a):
         canvas.itemconfig(score_text, text=f"Score:{score}", fill="black")
     elif a == 2:
         score += 1
-    canvas.itemconfig(score_text, text=f"Score:{score}")
+        canvas.itemconfig(score_text, text=f"Score:{score}")
     if score > 10:
         canvas.itemconfig(score_text, text=f"😉 Well Done Score:{score}", fill="gray")
     if score <= 0:
@@ -52,8 +52,8 @@ balls, score = [], 0
 
 score_text = canvas.create_text(300,20, text="Score", font=("Arial", 13), fill="black")
 
-try_again_btn = tk.Button(main ,text="Try Again", command=update_score)
-try_again_btn.pack()
+hard_btn = tk.Button(main ,text="Hard", command=create_ball)
+hard_btn.pack()
 canvas.bind_all('<KeyPress-Left>', move)
 canvas.bind_all('<KeyPress-Right>', move)
 
