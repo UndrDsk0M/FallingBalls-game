@@ -46,11 +46,11 @@ def update_score(a):
     if score > 10:
         canvas.itemconfig(score_text, text=f"😉 Well Done Score:{score}", fill="gray")
     if score <= 0:
-        delete_balls() # delete all balls on the screen
+        delete_balls()
         canvas.itemconfig(score_text, text=f"😥 You Lost The Game", fill="black")
-        update_score(0)
-        main.after_cancel(create_ball)
-        main.after_cancel(update_game)
+        restart_button.pack()
+        global is_lose
+        is_lose = True
 
 def restart_game():
     global score, balls, is_lose
